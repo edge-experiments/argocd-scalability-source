@@ -8,7 +8,10 @@ fi
 num="$1"
 
 for (( i=0; i<num; i++ )); do
-    mkdir kyst-configspec/indexed/${i}
+    # create a dir if the dir does not exist
+    if [ ! -d "kyst-configspec/indexed/${i}" ]; then
+        mkdir "kyst-configspec/indexed/${i}"
+    fi
     ( cat <<EOF
 apiVersion: edge.kyst.kube/v1alpha1
 kind: ConfigSpec
