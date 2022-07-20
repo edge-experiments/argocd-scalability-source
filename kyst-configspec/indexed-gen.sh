@@ -14,6 +14,8 @@ apiVersion: edge.kyst.kube/v1alpha1
 kind: ConfigSpec
 metadata:
   name: test-${i}
+  labels:
+    purpose: argocd-scalability
 spec:
   content:
     - spec 1 line 00000000000000000000000000000000000000000000000000000000000000000000000000000001
